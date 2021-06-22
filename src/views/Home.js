@@ -20,7 +20,7 @@ const Home = () => {
 	const navigation = useNavigation();
 
 	const profile = () => {
-		//navigation.navigate("Profile");
+		navigation.navigate("Profile");
 	};
 
 	const donate = () => {
@@ -29,7 +29,6 @@ const Home = () => {
 
 	return (
 		<View>
-		
 			<ImageBackground
 				source={require("../assets/zero-hunger.jpg")}
 				style={{
@@ -50,156 +49,192 @@ const Home = () => {
 					</TouchableOpacity>
 					<BlankSpacer height={height / 2.7} />
 				</View>
-				
-<View>
-				<ScrollView>
-				<View
-					style={{
-						//borderRadius: 30,
-						backgroundColor: "#E8DAFE",
-						paddingVertical: 20,
-						paddingHorizontal: 20,
-						borderTopStartRadius: 30,
-						borderTopEndRadius: 30,
-					}}
-				>
-					<View style={{ paddingTop: 10 }}>
-						<TouchableOpacity onPress={donate}>
+
+				<View>
+					<ScrollView>
+						<View
+							style={{
+								//borderRadius: 30,
+								backgroundColor: "#E8DAFE",
+								paddingVertical: 20,
+								paddingHorizontal: 20,
+								borderTopStartRadius: 30,
+								borderTopEndRadius: 30,
+							}}
+						>
+							<View style={{ paddingTop: 10 }}>
+								<TouchableOpacity onPress={donate}>
+									<View
+										style={{
+											borderRadius: 5,
+											//borderColor: 'white',
+											//borderWidth: 1,
+											alignItems: "center",
+											paddingVertical: 8,
+											backgroundColor: "#B795FF",
+											width: 170,
+											height: 40,
+											alignSelf: "flex-end",
+										}}
+									>
+										<Text
+											style={[
+												human.title3,
+												{ fontFamily: "arial" },
+											]}
+										>
+											Donate Now
+										</Text>
+									</View>
+								</TouchableOpacity>
+							</View>
+
+							<BlankSpacer height={20} />
+
 							<View
 								style={{
-									borderRadius: 5,
-									//borderColor: 'white',
-									//borderWidth: 1,
-									alignItems: "center",
-									paddingVertical: 8,
+									flexDirection: "row",
+									borderRadius: 20,
 									backgroundColor: "#B795FF",
-									width: 170,
-									height: 40,
-									alignSelf: "flex-end",
 								}}
 							>
-								<Text
-									style={[
-										human.title3,
-										{ fontFamily: "arial" },
-									]}
+								<View style={{ padding: 10, flex: 1 }}>
+									<Image
+										resizemode="contain"
+										style={{
+											width: 130,
+											height: 150,
+											borderRadius: 10,
+										}}
+										source={require("../assets/orphanage.png")}
+									/>
+								</View>
+
+								<View
+									style={{
+										flex: 1.5,
+										justifyContent: "center",
+									}}
 								>
-									Donate Now
-								</Text>
-							</View>
-						</TouchableOpacity>
-					</View>
+									<View style={{}}>
+										<Text style={[human.body]}>
+											Change lives every month by donating
+											any amount possible
+										</Text>
 
-					<BlankSpacer height={20} />
+										<BlankSpacer height={10} />
 
-					<View
-						style={{
-							flexDirection: "row",
-							borderRadius: 20,
-							backgroundColor: "#B795FF",
-						}}
-					>
-						<View style={{ padding: 10, flex: 1 }}>
-							<Image
-								resizemode="contain"
-								style={{
-									width: 130,
-									height: 150,
-									borderRadius: 10,
-								}}
-								source={require("../assets/orphanage.png")}
-							/>
-						</View>
-
-						<View style={{ flex: 1.5, justifyContent: "center" }}>
-							<View style={{}}>
-								<Text style={[human.body]}>
-									Change lives every month by donating any
-									amount possible
-								</Text>
-
-								<BlankSpacer height={10} />
-
-								<View alignItems={"center"}>
-									<TouchableOpacity>
-										<View
-											style={{
-												borderRadius: 5,
-												//borderColor: 'white',
-												//borderWidth: 1,
-												alignItems: "center",
-												paddingVertical: 8,
-												backgroundColor: "white",
-												alignSelf: "flex-end",
-											}}
-										>
-											<Text
-												style={[
-													human.body,
-													{
-														fontFamily: "arial",
-														paddingHorizontal: 10,
-													},
-												]}
-											>
-												Learn More
-											</Text>
+										<View alignItems={"center"}>
+											<TouchableOpacity>
+												<View
+													style={{
+														borderRadius: 5,
+														//borderColor: 'white',
+														//borderWidth: 1,
+														alignItems: "center",
+														paddingVertical: 8,
+														backgroundColor:
+															"white",
+														alignSelf: "flex-end",
+													}}
+												>
+													<Text
+														style={[
+															human.body,
+															{
+																fontFamily:
+																	"arial",
+																paddingHorizontal: 10,
+															},
+														]}
+													>
+														Learn More
+													</Text>
+												</View>
+											</TouchableOpacity>
 										</View>
-									</TouchableOpacity>
+									</View>
 								</View>
 							</View>
-						</View>
-					</View>
 
-					<BlankSpacer height={20} />
+							<BlankSpacer height={20} />
 
-					<View>
-						<Text style={[human.title3]}>What's new?</Text>
-					</View>
-
-					<BlankSpacer height={20} />
-
-					<View
-						style={{
-							flexDirection: "row",
-							backgroundColor: "white",
-							paddingVertical: 20,
-							paddingHorizontal: 20,
-							borderRadius: 5,
-						}}
-					>
-						<View style={{ flex: 1.5 }}>
 							<View>
-								<Text style={[human.title3]}>
-									Families in Palestine
-								</Text>
-
-								<Text style={[human.body, { color: "grey" }]}>
-									Support the Palestinian families and
-									children
-								</Text>
+								<Text style={[human.title3]}>What's new?</Text>
 							</View>
-						</View>
 
-						<View style={{ flex: 1 }}>
-							<Image
-								resizemode="contain"
-								style={{
-									width: 130,
-									height: 120,
-									//borderRadius: 10,
-								}}
-								source={require("../assets/orphanage.png")}
-							/>
+							<BlankSpacer height={20} />
+
+							<ScrollView horizontal={true}>
+								<Cards
+									head={"Families in Palestine"}
+									dets={
+										"Support the Palestinian families and children"
+									}
+									pic={require("../assets/orphanage.png")}
+								/>
+
+								<BlankSpacer width={20} />
+
+								<Cards
+									head={"Families in Palestine"}
+									dets={
+										"Support the Palestinian families and children"
+									}
+									pic={require("../assets/orphanage.png")}
+								/>
+
+								<Cards
+									head={"Families in Palestine"}
+									dets={
+										"Support the Palestinian families and children"
+									}
+									pic={require("../assets/orphanage.png")}
+								/>
+							</ScrollView>
 						</View>
-					</View>
-					
-					<BlankSpacer height={40} />
-				</View>
-				</ScrollView>
+					</ScrollView>
+					<BlankSpacer height={80} />
 				</View>
 			</ImageBackground>
-		
+		</View>
+	);
+};
+
+const Cards = ({ head, dets, pic }) => {
+	const { width, height } = Dimensions.get("screen");
+
+	return (
+		<View
+			style={{
+				flexDirection: "row",
+				backgroundColor: "white",
+				paddingVertical: 20,
+				paddingHorizontal: 0,
+				borderRadius: 5,
+				alignItems: "center",
+				justifyContent: "center",
+			}}
+		>
+			<View style={{ flex: 1.5, backgroundColor: "red" }}>
+				<View>
+					<Text style={[human.title3]}>{head}</Text>
+
+					<Text style={[human.body, { color: "grey" }]}>{dets}</Text>
+				</View>
+			</View>
+
+			<View style={{ flex: 1 }}>
+				<Image
+					resizemode="contain"
+					style={{
+						width: 130,
+						height: 120,
+						//borderRadius: 10,
+					}}
+					source={pic}
+				/>
+			</View>
 		</View>
 	);
 };

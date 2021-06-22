@@ -14,50 +14,82 @@ import BlankSpacer from "react-native-blank-spacer";
 const Donations = () => {
 	const { width, height } = Dimensions.get("screen");
 
-    return (
-        <View>
-        <View style={{backgroundColor:"#B795FF", paddingBottom:50, borderBottomEndRadius:1000, borderBottomStartRadius:1000}}>
-<View style={{backgroundColor:"#E8DAFE", paddingVertical:200, borderBottomEndRadius:1000, borderBottomStartRadius:1000, alignItems:'center'}}>
-<View style={{paddingHorizontal:10}}>
-    <Text style={[human.title2, {alignSelf:"center", textAlign:"center"} ]}>As little as $1 USD can help feed a hungry child in Kenya</Text>
-    </View>
-</View>
-        </View>
+	return (
+		<View>
+			<View
+				style={{
+					backgroundColor: "#B795FF",
+					paddingBottom: 50,
+					borderBottomEndRadius: 1000,
+					borderBottomStartRadius: 1000,
+				}}
+			>
+				<View
+					style={{
+						backgroundColor: "#E8DAFE",
+						paddingVertical: 200,
+						borderBottomEndRadius: 1000,
+						borderBottomStartRadius: 1000,
+						alignItems: "center",
+					}}
+				>
+					<View style={{ paddingHorizontal: 10 }}>
+						<Text
+							style={[
+								human.title2,
+								{ alignSelf: "center", textAlign: "center" },
+							]}
+						>
+							As little as $1 USD can help feed a hungry child in
+							Kenya
+						</Text>
+					</View>
+				</View>
+			</View>
 
-        <BlankSpacer height={30} />
+			<BlankSpacer height={30} />
 
-        <View style={{alignItems:"center"}}>
-            <Text style={[human.title3]}>
-                Help feed street children
-            </Text>
-        </View>
+			<View style={{ alignItems: "center" }}>
+				<Text style={[human.title3]}>Help feed street children</Text>
+			</View>
 
-        <BlankSpacer height={30} />
+			<BlankSpacer height={30} />
 
-        <View style={{alignItems:"center"}}>
-            
-                <TouchableOpacity>
-                <View style={{ borderRadius:10, padding:10, backgroundColor:"#B795FF"}}>
-                    <Text style={[human.body, {color:"white"}]}>Choose a payment method</Text>
-                </View>
-                </TouchableOpacity>
-            
-        </View>
+			<View style={{ alignItems: "center" }}>
+				<TouchableOpacity>
+					<View
+						style={{
+							borderRadius: 10,
+							padding: 10,
+							backgroundColor: "#B795FF",
+						}}
+					>
+						<Text style={[human.body, { color: "white" }]}>
+							Choose a payment method
+						</Text>
+					</View>
+				</TouchableOpacity>
+			</View>
 
-        <BlankSpacer height={30} />
+			<BlankSpacer height={30} />
 
-<View style={{alignSelf:"center", position:"absolute", marginTop:height-40}}>
-    
-        <TouchableOpacity>
-        <View >
-            <Text style={[human.body, {color:"grey"}]}>How is my contribution used?</Text>
-        </View>
-        </TouchableOpacity>
-    
-</View>
-        </View>
-        
-    );
+			<View
+				style={{
+					alignSelf: "center",
+					position: "absolute",
+					marginTop: height - 100,
+				}}
+			>
+				<TouchableOpacity>
+					<View>
+						<Text style={[human.body, { color: "grey" }]}>
+							How is my contribution used?
+						</Text>
+					</View>
+				</TouchableOpacity>
+			</View>
+		</View>
+	);
 };
 
-export {Donations};
+export { Donations };
