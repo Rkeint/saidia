@@ -29,34 +29,35 @@ const Home = () => {
 
 	return (
 		<View>
-			<ImageBackground
-				source={require("../assets/zero-hunger.jpg")}
-				style={{
-					width: width,
-					//height: height,
-					//flex: 1,
-					resizeMode: "contain",
-					//justifyContent: 'center',
-				}}
-			>
-				<View style={{ alignSelf: "flex-end", paddingEnd: 6 }}>
-					<TouchableOpacity onPress={profile}>
-						<MaterialIcon
-							name={"account-circle"}
-							style={{ color: "#E8DAFE" }}
-							size={45}
-						/>
-					</TouchableOpacity>
-					<BlankSpacer height={height / 2.7} />
-				</View>
+			<ScrollView>
+				<ImageBackground
+					source={require("../assets/zero-hunger.jpg")}
+					style={{
+						width: width,
+						//height: height,
+						//flex: 1,
+						resizeMode: "contain",
+						//justifyContent: 'center',
+					}}
+				>
+					<View style={{ alignSelf: "flex-end", paddingEnd: 6 }}>
+						<TouchableOpacity onPress={profile}>
+							<MaterialIcon
+								name={"account-circle"}
+								style={{ color: "#E8DAFE" }}
+								size={45}
+							/>
+						</TouchableOpacity>
+						<BlankSpacer height={height / 2.7} />
+					</View>
 
-				<View>
-					<ScrollView>
+					<View>
 						<View
 							style={{
 								//borderRadius: 30,
 								backgroundColor: "#E8DAFE",
-								paddingVertical: 20,
+								paddingTop: 20,
+								paddingBottom: 5,
 								paddingHorizontal: 20,
 								borderTopStartRadius: 30,
 								borderTopEndRadius: 30,
@@ -174,7 +175,7 @@ const Home = () => {
 									pic={require("../assets/orphanage.png")}
 								/>
 
-								<BlankSpacer width={20} />
+								<BlankSpacer width={10} />
 
 								<Cards
 									head={"Families in Palestine"}
@@ -183,6 +184,8 @@ const Home = () => {
 									}
 									pic={require("../assets/orphanage.png")}
 								/>
+
+								<BlankSpacer width={10} />
 
 								<Cards
 									head={"Families in Palestine"}
@@ -193,10 +196,11 @@ const Home = () => {
 								/>
 							</ScrollView>
 						</View>
-					</ScrollView>
-					<BlankSpacer height={80} />
-				</View>
-			</ImageBackground>
+
+						{/* <BlankSpacer height={10} /> */}
+					</View>
+				</ImageBackground>
+			</ScrollView>
 		</View>
 	);
 };
@@ -207,33 +211,53 @@ const Cards = ({ head, dets, pic }) => {
 	return (
 		<View
 			style={{
-				flexDirection: "row",
-				backgroundColor: "white",
-				paddingVertical: 20,
-				paddingHorizontal: 0,
-				borderRadius: 5,
+				//flexDirection: "row",
+
 				alignItems: "center",
-				justifyContent: "center",
+				// justifyContent: "center",
+				width: width - 40,
 			}}
 		>
-			<View style={{ flex: 1.5, backgroundColor: "red" }}>
-				<View>
-					<Text style={[human.title3]}>{head}</Text>
-
-					<Text style={[human.body, { color: "grey" }]}>{dets}</Text>
-				</View>
-			</View>
-
-			<View style={{ flex: 1 }}>
-				<Image
-					resizemode="contain"
+			<View
+				style={{
+					flexDirection: "row",
+					backgroundColor: "white",
+					borderRadius: 5,
+					paddingVertical: 10,
+					paddingHorizontal: 5,
+				}}
+			>
+				<View
 					style={{
-						width: 130,
-						height: 120,
-						//borderRadius: 10,
+						flex: 1.5,
+						justifyContent: "center",
 					}}
-					source={pic}
-				/>
+				>
+					<View>
+						<Text style={[human.title3]}>{head}</Text>
+
+						<Text style={[human.body, { color: "grey" }]}>
+							{dets}
+						</Text>
+					</View>
+				</View>
+
+				<View
+					style={{
+						flex: 1,
+						alignItems: "center",
+					}}
+				>
+					<Image
+						resizemode="contain"
+						style={{
+							width: 130,
+							height: 120,
+							//borderRadius: 10,
+						}}
+						source={pic}
+					/>
+				</View>
 			</View>
 		</View>
 	);

@@ -22,11 +22,7 @@ const Categories = () => {
 
 	return (
 		<View>
-			<Head
-				head={"Categories"}
-				icon={"keyboard-backspace"}
-				touch={back}
-			/>
+			<Head head={"Categories"} icon={"chevron-left"} touch={back} />
 
 			<ScrollView style={{ paddingHorizontal: 20, paddingBottom: 20 }}>
 				<BlankSpacer height={20} />

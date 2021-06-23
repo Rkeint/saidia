@@ -10,9 +10,16 @@ import {
 import { human } from "react-native-typography";
 import { Text, Button } from "react-native-paper";
 import BlankSpacer from "react-native-blank-spacer";
+import { useNavigation } from "@react-navigation/native";
 
 const Donations = () => {
 	const { width, height } = Dimensions.get("screen");
+
+	const navigation = useNavigation();
+
+	const nav = () => {
+		navigation.navigate("PaymentMethods");
+	};
 
 	return (
 		<View>
@@ -56,7 +63,7 @@ const Donations = () => {
 			<BlankSpacer height={30} />
 
 			<View style={{ alignItems: "center" }}>
-				<TouchableOpacity>
+				<TouchableOpacity onPress={nav}>
 					<View
 						style={{
 							borderRadius: 10,

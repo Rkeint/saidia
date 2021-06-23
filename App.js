@@ -31,6 +31,7 @@ import { Categories } from "./src/views/Categories";
 import { Home } from "./src/views/Home";
 import { Donations } from "./src/views/Donations";
 import { Profile } from "./src/views/Profile";
+import { PaymentMethods } from "./src/views/PaymentMethods";
 
 const Stack = createStackNavigator();
 
@@ -86,6 +87,10 @@ const App: () => Node = () => {
 					<Stack.Screen name="Home" component={Home} />
 					<Stack.Screen name="Donations" component={Donations} />
 					<Stack.Screen name="Profile" component={Profile} />
+					<Stack.Screen
+						name="PaymentMethods"
+						component={PaymentMethods}
+					/>
 				</Stack.Navigator>
 			</NavigationContainer>
 		</PaperProvider>
