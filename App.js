@@ -32,6 +32,7 @@ import { Home } from "./src/views/Home";
 import { Donations } from "./src/views/Donations";
 import { Profile } from "./src/views/Profile";
 import { PaymentMethods } from "./src/views/PaymentMethods";
+import { Login } from "./src/views/Login";
 
 const Stack = createStackNavigator();
 
@@ -46,6 +47,7 @@ const theme = {
 
 const Section = ({ children, title }): Node => {
 	const isDarkMode = useColorScheme() === "dark";
+
 	return (
 		<View style={styles.sectionContainer}>
 			<Text
@@ -87,6 +89,7 @@ const App: () => Node = () => {
 					<Stack.Screen name="Home" component={Home} />
 					<Stack.Screen name="Donations" component={Donations} />
 					<Stack.Screen name="Profile" component={Profile} />
+					<Stack.Screen name="Login" component={Login} />
 					<Stack.Screen
 						name="PaymentMethods"
 						component={PaymentMethods}

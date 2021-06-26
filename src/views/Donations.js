@@ -18,7 +18,7 @@ const Donations = () => {
 	const navigation = useNavigation();
 
 	const nav = () => {
-		navigation.navigate("PaymentMethods");
+		navigation.navigate("Login");
 	};
 
 	return (
@@ -34,7 +34,7 @@ const Donations = () => {
 				<View
 					style={{
 						backgroundColor: "#E8DAFE",
-						paddingVertical: 200,
+						paddingVertical: height / 4,
 						borderBottomEndRadius: 1000,
 						borderBottomStartRadius: 1000,
 						alignItems: "center",
@@ -84,7 +84,7 @@ const Donations = () => {
 				style={{
 					alignSelf: "center",
 					position: "absolute",
-					marginTop: height - 100,
+					marginTop: height - 80,
 				}}
 			>
 				<TouchableOpacity>
