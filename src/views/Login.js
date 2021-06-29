@@ -30,22 +30,22 @@ const Login = () => {
 		control,
 		handleSubmit,
 		formState: { errors },
-	} = (useForm = {
+	} = useForm({
 		resolver: yupResolver(schema),
 	});
 
-	const [user, setUser] = useState();
+	const [user, setUser] = useState("");
 
 	const submit = () => {
-		setUser("verified");
+		//setUser("verified");
 		console.log(user);
 		next();
 	};
 
 	const next = () => {
-		user !== ""
-			? navigation.navigate("PaymentMethods")
-			: console.log("Not working");
+		user === ""
+			? console.log("Not working")
+			: navigation.navigate("PaymentMethods");
 	};
 
 	const navigation = useNavigation();
@@ -130,8 +130,11 @@ const Login = () => {
 									keyboardType="email-address"
 									label="Email Address"
 									// onChange={}
-									value={value}
-									onChangeText={(value) => onChange(value)}
+									//value={value}
+									onChangeText={(user) => {
+										setUser(user);
+									}}
+									outlineColor={errors.email ? "red" : ""}
 								/>
 							)}
 							name="email"
