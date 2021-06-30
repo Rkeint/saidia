@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	ScrollView,
 	Image,
 	Dimensions,
 	View,
 	TouchableOpacity,
+	Modal,
+	ActivityIndicator,
 } from "react-native";
 import { Head } from "../components/TitleBar";
 import { human } from "react-native-typography";
@@ -14,6 +16,8 @@ import BlankSpacer from "react-native-blank-spacer";
 import MaterialIcon from "react-native-vector-icons/Entypo";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
+import { WebView } from "react-native-webview";
+import Feather from "react-native-vector-icons/Feather";
 
 const PaymentMethods = () => {
 	const { width, height } = Dimensions.get("screen");
@@ -23,6 +27,11 @@ const PaymentMethods = () => {
 	const back = () => {
 		navigation.navigate("Categories");
 	};
+
+	const [showGateway, setShowGateway] = useState(false);
+	const [prog, setProg] = useState(false);
+	const [progClr, setProgClr] = useState("#000");
+
 	return (
 		<ScrollView>
 			<Head icon="chevron-left" head="Payment Methods" touch={back} />
@@ -41,15 +50,79 @@ const PaymentMethods = () => {
 				</View>
 			</View>
 			<Options method={"Credit / Debit card"} icon="credit-card" />
-			<Options method={"Paypal"} icon="paypal" />
+			<Options
+				method={"Paypal"}
+				icon="paypal"
+				press={() => {
+					setShowGateway(true);
+				}}
+			/>
 			<Options method={"M-Pesa"} icon="mobile" />
+
+			{showGateway ? (
+				<Modal
+					visible={showGateway}
+					onDismiss={() => setShowGateway(false)}
+					onRequestClose={() => setShowGateway(false)}
+					animationType={"fade"}
+					transparent
+				>
+					<View
+						style={{
+							position: "absolute",
+							top: 0,
+							left: 0,
+							right: 0,
+							bottom: 0,
+						}}
+					>
+						<View
+							style={{
+								flexDirection: "row",
+								alignItems: "center",
+								backgroundColor: "#f9f9f9",
+								zIndex: 25,
+								elevation: 2,
+							}}
+						>
+							<TouchableOpacity
+								style={{ padding: 13 }}
+								onPress={() => setShowGateway(false)}
+							>
+								<Feather name={"x"} size={24} />
+							</TouchableOpacity>
+							<Text
+								style={{
+									flex: 1,
+									textAlign: "center",
+									fontSize: 16,
+									fontWeight: "bold",
+									color: "#00457C",
+								}}
+							>
+								PayPal GateWay
+							</Text>
+							<View style={{ padding: 13 }}>
+								<ActivityIndicator
+									size={24}
+									color={"#00457C"}
+								/>
+							</View>
+						</View>
+						<WebView
+							source={{ uri: "https://www.paypal.com" }}
+							style={{ flex: 1 }}
+						/>
+					</View>
+				</Modal>
+			) : null}
 		</ScrollView>
 	);
 };
 
-const Options = ({ method, icon }) => {
+const Options = ({ method, icon, press }) => {
 	return (
-		<TouchableOpacity>
+		<TouchableOpacity onPress={press}>
 			<View
 				style={{ borderBottomColor: "lightgrey", borderBottomWidth: 1 }}
 			>
