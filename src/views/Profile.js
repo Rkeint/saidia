@@ -12,6 +12,11 @@ const Profile = () => {
 	const back = () => {
 		navigation.navigate("Home");
 	};
+
+	const aboutus = () => {
+		navigation.navigate("AboutUs");
+	};
+
 	return (
 		<ScrollView>
 			<Head
@@ -46,7 +51,7 @@ const Profile = () => {
 
 			<View>
 				<PurplebgTitle head={"ADDITIONAL INFORMATION"} />
-				<Details head={"About Us"} icoR={"chevron-right"} />
+				<Details head={"About Us"} icoR={"chevron-right"} nav={aboutus}/>
 				<Details head={"Privacy Policy"} icoR={"chevron-right"} />
 				<Details head={"Contact Us"} icoR={"chevron-right"} />
 				<Details head={"Rate Us"} icoR={"chevron-right"} />
@@ -68,7 +73,7 @@ const PurplebgTitle = ({ head }) => {
 	);
 };
 
-const Details = ({ head, icoL, icoR, nav }) => {
+export const Details = ({ head, icoL, icoR, nav }) => {
 	return (
 		<View style={{ paddingVertical: 10 }}>
 			<TouchableOpacity onPress={nav}>

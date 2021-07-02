@@ -33,6 +33,8 @@ import { Donations } from "./src/views/Donations";
 import { Profile } from "./src/views/Profile";
 import { PaymentMethods } from "./src/views/PaymentMethods";
 import { Login } from "./src/views/Login";
+import { AboutUs } from "./src/views/AboutUs";
+
 
 const Stack = createStackNavigator();
 
@@ -94,6 +96,7 @@ const App: () => Node = () => {
 						name="PaymentMethods"
 						component={PaymentMethods}
 					/>
+					<Stack.Screen name="AboutUs" component={AboutUs} />
 				</Stack.Navigator>
 			</NavigationContainer>
 		</PaperProvider>
