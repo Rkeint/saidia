@@ -5758,6 +5758,11 @@
   dependencies:
     "warn-once" "^0.1.0"
 
+"react-native-shadow-cards@^1.0.2":
+  "integrity" "sha512-cUk9+4T8XTwWPKJzLxmnFia9i0m5PWdLPrtGiShVH5vVH48TZ/8JLBzsUe50tfzTxvMWPvQM1vZE8Sytfj1mjw=="
+  "resolved" "https://registry.npmjs.org/react-native-shadow-cards/-/react-native-shadow-cards-1.0.2.tgz"
+  "version" "1.0.2"
+
 "react-native-typography@^1.4.1":
   "integrity" "sha512-dc9Zfs4jUdq4ygx4/KwO6jKTERBu6cRrfPJGntw/pA+D6BMjlWfMNuhZ/69vf4Zpsnt9s4AGe+Z/V1QFYaCXAA=="
   "resolved" "https://registry.yarnpkg.com/react-native-typography/-/react-native-typography-1.4.1.tgz"

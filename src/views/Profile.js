@@ -17,6 +17,14 @@ const Profile = () => {
 		navigation.navigate("AboutUs");
 	};
 
+	const policy = () => {
+		navigation.navigate("Policy");
+	};
+
+	const contactus = () => {
+		navigation.navigate("ContactUs");
+	};
+
 	return (
 		<ScrollView>
 			<Head
@@ -52,8 +60,8 @@ const Profile = () => {
 			<View>
 				<PurplebgTitle head={"ADDITIONAL INFORMATION"} />
 				<Details head={"About Us"} icoR={"chevron-right"} nav={aboutus}/>
-				<Details head={"Privacy Policy"} icoR={"chevron-right"} />
-				<Details head={"Contact Us"} icoR={"chevron-right"} />
+				<Details head={"Privacy Policy"} icoR={"chevron-right"} nav={policy} />
+				<Details head={"Contact Us"} icoR={"chevron-right"} nav={contactus} />
 				<Details head={"Rate Us"} icoR={"chevron-right"} />
 			</View>
 		</ScrollView>

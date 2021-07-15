@@ -34,7 +34,8 @@ import { Profile } from "./src/views/Profile";
 import { PaymentMethods } from "./src/views/PaymentMethods";
 import { Login } from "./src/views/Login";
 import { AboutUs } from "./src/views/AboutUs";
-
+import { Policy } from "./src/views/Policy";
+import { ContactUs } from "./src/views/ContactUs";
 
 const Stack = createStackNavigator();
 
@@ -97,6 +98,8 @@ const App: () => Node = () => {
 						component={PaymentMethods}
 					/>
 					<Stack.Screen name="AboutUs" component={AboutUs} />
+					<Stack.Screen name="Policy" component={Policy} />
+					<Stack.Screen name="ContactUs" component={ContactUs} />
 				</Stack.Navigator>
 			</NavigationContainer>
 		</PaperProvider>
