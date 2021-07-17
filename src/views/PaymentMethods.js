@@ -110,7 +110,9 @@ const PaymentMethods = () => {
 							</View>
 						</View>
 						<WebView
-							source={{ uri: "https://www.paypal.com" }}
+							source={{
+								uri: "https://saidia-ba480.web.app/paypal?",
+							}}
 							style={{ flex: 1 }}
 						/>
 					</View>
